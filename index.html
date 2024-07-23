@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
     <title>Calculateur de Pips</title>
+    <style>
+      body {
+        font-family: 'Roboto Mono', monospace;
+      }
+      .btn-hover {
+        transition: all 0.3s ease;
+      }
+      .btn-hover:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .input-focus {
+        transition: all 0.3s ease;
+      }
+      .input-focus:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.4);
+      }
+    </style>
   </head>
   <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
@@ -13,55 +33,63 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Calcul de gain ou perte potentiel -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <div class="p-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+          <div class="p-6 flex-grow">
             <img src="gain_perte.jpg" alt="Gain ou perte" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Gain ou perte potentiel</h2>
             <div class="space-y-4">
-              <input id="gain" type="text" placeholder="Entrez le lot" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <input id="pip-one" type="text" placeholder="Nombre de pips" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <input id="capi-one" type="text" placeholder="Votre capital" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <button onclick="lotbutt()" class="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">Calculer</button>
+              <input id="gain" type="text" placeholder="Entrez le lot" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
+              <input id="pip-one" type="text" placeholder="Nombre de pips" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
+              <input id="capi-one" type="text" placeholder="Votre capital" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
             </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="lotbutt()" class="w-full bg-orange-500 text-white py-2 rounded-md btn-hover">Calculer</button>
           </div>
         </div>
 
         <!-- Lot à utiliser -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <div class="p-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+          <div class="p-6 flex-grow">
             <img src="lot.jpg" alt="Lot" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Lot à utiliser</h2>
             <div class="space-y-4">
-              <input id="mont_gain_pert" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <input id="nbr_pip" type="text" placeholder="Nombre de Pips" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <button onclick="nbLot()" class="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">Calculer</button>
+              <input id="mont_gain_pert" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
+              <input id="nbr_pip" type="text" placeholder="Nombre de Pips" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
             </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="nbLot()" class="w-full bg-orange-500 text-white py-2 rounded-md btn-hover">Calculer</button>
           </div>
         </div>
 
         <!-- Nombre de pips -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <div class="p-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+          <div class="p-6 flex-grow">
             <img src="pips.jpg" alt="Pips" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Nombre de pips</h2>
             <div class="space-y-4">
-              <input id="pp_gain" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <input id="nbPip" type="text" placeholder="Nombre de lot" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <button onclick="nbPips()" class="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">Calculer</button>
+              <input id="pp_gain" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
+              <input id="nbPip" type="text" placeholder="Nombre de lot" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
             </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="nbPips()" class="w-full bg-orange-500 text-white py-2 rounded-md btn-hover">Calculer</button>
           </div>
         </div>
 
         <!-- Pourcentage d'investissement -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <div class="p-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+          <div class="p-6 flex-grow">
             <img src="gain_perte.jpg" alt="Pourcentage" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Pourcentage d'investissement</h2>
             <div class="space-y-4">
-              <input id="cap_two" type="text" placeholder="Montant du capital" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <input id="pource" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-200">
-              <button onclick="pourcentage()" class="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">Calculer</button>
+              <input id="cap_two" type="text" placeholder="Montant du capital" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
+              <input id="pource" type="text" placeholder="Montant gain/perte" class="w-full px-3 py-2 border border-gray-300 rounded-md input-focus">
             </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="pourcentage()" class="w-full bg-orange-500 text-white py-2 rounded-md btn-hover">Calculer</button>
           </div>
         </div>
 
