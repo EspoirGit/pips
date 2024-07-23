@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#swal2-title{
+    font-size: 18px;
+}
+.swal2-popup{
+    width: 80%;
+}
