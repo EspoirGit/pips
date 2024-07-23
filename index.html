@@ -25,6 +25,14 @@
         outline: none;
         box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.4);
       }
+      .card-hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
     </style>
   </head>
   <body class="bg-gray-100">
@@ -33,7 +41,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Calcul de gain ou perte potentiel -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full card-hover">
           <div class="p-6 flex-grow">
             <img src="gain_perte.jpg" alt="Gain ou perte" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Gain ou perte potentiel</h2>
@@ -49,7 +57,7 @@
         </div>
 
         <!-- Lot à utiliser -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full card-hover">
           <div class="p-6 flex-grow">
             <img src="lot.jpg" alt="Lot" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Lot à utiliser</h2>
@@ -64,7 +72,7 @@
         </div>
 
         <!-- Nombre de pips -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full card-hover">
           <div class="p-6 flex-grow">
             <img src="pips.jpg" alt="Pips" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Nombre de pips</h2>
@@ -79,7 +87,7 @@
         </div>
 
         <!-- Pourcentage d'investissement -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full card-hover">
           <div class="p-6 flex-grow">
             <img src="gain_perte.jpg" alt="Pourcentage" class="w-full h-40 object-cover rounded-lg mb-4">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Pourcentage d'investissement</h2>
