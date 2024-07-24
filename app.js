@@ -8,9 +8,9 @@ function lotbutt() {
   var k_moins = (k * 100) / cap_one.value;
   var k_mont_plus = Number(cap_one.value) + k;
   var k_mont_moins = cap_one.value - k;
-  Swal.fire(
-    `Votre gain ou perte potentiel est de : ${k}$ <br /> <br /> Si c'était un gain, vous aurez gagner  : ${k_moins}% de votre capital soit ${k_mont_plus}$ <br /> <br /> Si c'était une perte, vous aurez perdu  : ${k_moins}% de votre capital soit ${k_mont_moins}$`
-  );
+  Swal.fire({
+    text:`Votre gain ou perte potentiel est de : ${k}$ <br /> <br /> Si c'était un gain, vous aurez gagner  : ${k_moins}% de votre capital soit ${k_mont_plus}$ <br /> <br /> Si c'était une perte, vous aurez perdu  : ${k_moins}% de votre capital soit ${k_mont_moins}$`
+  });
 }
 
 function nbLot() {
@@ -18,7 +18,7 @@ function nbLot() {
   let e = document.getElementById("nbr_pip").value;
   let T = b / (e * 10);
 
-  Swal.fire(`Le nombre de lot à utiliser est de : ${T}`);
+  Swal.fire({text : `Le nombre de lot à utiliser est de : ${T}` });
 }
 
 function nbPips() {
@@ -26,7 +26,7 @@ function nbPips() {
   let e = document.getElementById("nbPip").value;
   let T = b / (e * 10);
 
-  Swal.fire(`Le nombre de pips à utiliser est de : ${T}pips`);
+  Swal.fire( {text : `Le nombre de pips à utiliser est de : ${T}pips`});
 }
 
 function pourcentage() {
@@ -35,7 +35,7 @@ function pourcentage() {
   var k_pour = (k * 100) / a;
   console.log(k_pour)
 
-  Swal.fire(`
+  Swal.fire({text : `
   Si c'était un gain, vous aurez gagner ${k_pour}% de votre capital, soit ${
     Number(a) + Number(k)
   }$ <br /> 
@@ -43,5 +43,5 @@ function pourcentage() {
     Number(a) - Number(k)
   }$ <br /> 
     
-  `);
+  `});
 }
