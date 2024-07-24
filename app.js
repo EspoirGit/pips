@@ -9,7 +9,7 @@ function lotbutt() {
   var k_mont_plus = Number(cap_one.value) + k;
   var k_mont_moins = cap_one.value - k;
   Swal.fire({
-    text:`Votre gain ou perte potentiel est de : ${k}$ <br /> <br /> Si c'était un gain, vous aurez gagner  : ${k_moins}% de votre capital soit ${k_mont_plus}$ <br /> <br /> Si c'était une perte, vous aurez perdu  : ${k_moins}% de votre capital soit ${k_mont_moins}$`
+    text:`Votre gain ou perte potentiel est de : ${k}$ .............. Si c'était un gain, vous aurez gagner  : ${k_moins}% de votre capital soit ${k_mont_plus}$ ............. Si c'était une perte, vous aurez perdu  : ${k_moins}% de votre capital soit ${k_mont_moins}$`
   });
 }
 
@@ -38,10 +38,10 @@ function pourcentage() {
   Swal.fire({text : `
   Si c'était un gain, vous aurez gagner ${k_pour}% de votre capital, soit ${
     Number(a) + Number(k)
-  }$ <br /> 
+  }$.............
   Si c'était une perte, vous aurez perdu ${k_pour}% de votre capital, soit ${
     Number(a) - Number(k)
-  }$ <br /> 
+  }$ 
     
   `});
 }
