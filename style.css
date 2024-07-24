@@ -5,8 +5,8 @@
 }
 
 #swal2-title{
-    font-size: 18px;
+    font-size: 15px;
 }
 .swal2-popup{
-    width: 80%;
+    width: auto;
 }
